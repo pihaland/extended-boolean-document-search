@@ -2,6 +2,8 @@
 
 A document search system using an extended Boolean model, supporting logical operators (AND, OR, NOT) with TF-IDF ranking.
 
+![img_1.png](img_1.png)
+![img.png](img.png)
 ## Features
 
 - Document storage in MongoDB
