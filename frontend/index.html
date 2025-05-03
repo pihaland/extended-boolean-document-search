@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Boolean Document Search</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=SUSE:wght@100..800&display=swap"
+          rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="./index.html">Boolean Search</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./admin.html">Administration</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main content -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Title and description -->
+            <div class="text-center mb-5">
+                <h1 class="display-4">Extended Boolean Search</h1>
+                <p class="lead">Document search with support for logical operators AND, OR, NOT</p>
+            </div>
+
+            <!-- Search form -->
+            <div class="card shadow mb-5">
+                <div class="card-body">
+                    <form id="searchForm">
+                        <div class="mb-3">
+                            <label for="searchQuery" class="form-label mb-4">Enter search query:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control mb-3" id="searchQuery"
+                                       placeholder="cat AND (dog OR bird) AND NOT fish">
+                                <button type="submit" class="btn btn-primary mb-3">
+                                    <i class="bi bi-search me-1"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Usage instructions -->
+                    <div class="mt-3">
+                        <p class="text-muted small">
+                            <strong>Tip:</strong> Use operators AND, OR, NOT, and parentheses () to create queries.<br>
+                            Example: <code>cat AND (dog OR mouse) AND NOT fish</code> - will find documents containing
+                            cat and (dog or mouse), but not fish.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search results (initially hidden) -->
+            <div id="resultsSection" class="mb-5" style="display: none;">
+                <h2>Search Results</h2>
+                <div class="alert alert-info" id="resultsInfo">
+                    <div>Found <span id="resultsCount">0</span> document</div>
+                    <div>Found <span id="queryTime">0</span> document</div>
+                </div>
+                <div id="resultsList" class="list-group"></div>
+            </div>
+
+            <!-- No results message (initially hidden) -->
+            <div id="noResultsMessage" class="alert alert-warning" style="display: none;">
+                No documents found for your query. Try modifying your search terms.
+            </div>
+
+            <!-- Loading indicator (initially hidden) -->
+            <div id="loadingIndicator" class="text-center" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Searching...</p>
+            </div>
+
+            <!-- Error message (initially hidden) -->
+            <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        <p class="text-muted mb-0">
+            &copy; 2025 Educational Project | CTU FIT | pihaland & osadcole
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Search handling script -->
+<script src="./js/search.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,185 @@
+:root {
+    --primary-color: #032539;
+    --secondary-color: #1C768F;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --info-color: #0dcaf0;
+    --dark-color: #032539;
+    --light-color: #f8f3f2;
+    --orange-color: #ec6e0b;
+    --orange-color-light: #fa921c;
+    --brown-color-light: #f48834;
+}
+
+/* Bootstrap color overrides */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-secondary {
+    background-color: var(--orange-color) !important;
+    border-color: var(--orange-color) !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--brown-color-light) !important;
+    border-color: var(--brown-color-light) !important;
+}
+
+.alert {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    transition: 0.5s;
+}
+.navbar-brand:hover {
+    color: var(--orange-color-light);
+    transition: 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: var(--orange-color) !important;
+    border-color: var(--orange-color) !important;
+}
+
+.navbar-dark.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--orange-color-light) !important;
+    border-radius: 4px;
+}
+
+/* General css */
+
+* {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.container {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: var(--light-color);
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+/* Styles for document cards in search results */
+.result-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.result-score {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Styles for highlighting matches in search results */
+.highlight {
+    background-color: rgba(255, 255, 0, 0.3);
+    padding: 0.1rem 0.2rem;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+/* Styles for search form */
+.search-form-container {
+    background-color: var(--light-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for document modal content */
+#documentModalContent {
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* Styles for documents table */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+    cursor: pointer;
+}
+
+/* Styles for buttons */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.375rem 0.75rem;
+}
+
+.btn-icon .bi {
+    margin-right: 0.25rem;
+}
+
+/* Styles for code block in instructions */
+code {
+    background-color: #f0f0f0;
+    padding: 0.1rem 0.2rem;
+    border-radius: 3px;
+    font-size: 90%;
+    color: var(--danger-color);
+}
+
+/* Styles for placeholder */
+::placeholder {
+    opacity: 0.6 !important;
+}
+
+/* Adaptation */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .result-score {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.8rem;
+    }
+} 
